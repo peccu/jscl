@@ -22,10 +22,7 @@
 
 (in-package :jscl)
 
-(defvar *base-directory*
-  (if #.*load-pathname*
-      (make-pathname :name nil :type nil :defaults #.*load-pathname*)
-      *default-pathname-defaults*))
+(defvar *base-directory* (asdf:system-source-directory :jscl))
 
 (defvar *version*
   ;; Read the version from the package.json file. We could have used a
